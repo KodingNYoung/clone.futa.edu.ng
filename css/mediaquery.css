@@ -16,15 +16,17 @@
         padding: 20px;
     }
     .navbar .nav-container{
+    
         margin-top: 0;
         background:rgb(71, 70, 70);
         position: relative;
         max-height: 0;
         overflow-y: hidden;
-        /* transition: all 0.5s ease-in; */
+        transition: all 0.5s ease-in;
     }
    .navbar .new_nav-container{
         max-height: 220vh;
+        display: block;
         position: relative;
     }
     .navbar .nav-container {
