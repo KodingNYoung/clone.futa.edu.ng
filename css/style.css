@@ -147,27 +147,6 @@ body{
     text-transform: uppercase;
 }
 
-
-@media screen and (min-width:990px){
-    .navbar{
-        height: 8vh;
-    }
-    .nav-container .nav-items .dropitems{
-        position: absolute;
-    }
-    .navbar .nav-container{
-        height: 100%;
-    }
-    .nav-container .nav-items:hover .dropitems{
-        max-height: 100vh;
-    }
-    .navbar .nav-container .nav-items:hover .link-container{
-        background-color: rgb(64, 173, 224);
-    }
-    .dropitems a:hover{
-        background-color:rgb(39, 135, 180) ;
-    }
-}
 /* SYTLE FOR NAV ENDS HERE */
 
 
@@ -175,8 +154,8 @@ body{
 
 .carousel{
     position: relative;
-    height: 70vh;
-    width: 80%;
+    height: 50vh;
+    width: 100%;
     margin: 0 auto;
     display: block;
 }
@@ -235,7 +214,6 @@ body{
     top: 50%;
     transform: translateY(-50%);
     text-align: left;
-
 }
 .slide__text .text a{
     text-decoration: none;
@@ -249,29 +227,8 @@ body{
     background-color: rgb(236, 235, 235);
     color: rgb(89, 192, 240);
 }
-@media screen and (min-width:767px){
-    .carousel__item{
-        grid-template-rows:1fr;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .carousel__nav{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-@media screen and (max-width:767px){
-    .carousel__nav{
-        grid-template-columns: 1fr 1fr;
-    }
-    .carousel__item{
-        grid-template-columns: 1fr;
-        grid-template-rows: 45% 55%;
-    }
-}
-@media screen and (max-width:479px){
-    .carousel__nav{
-        grid-template-columns: 1fr;
-    }
-}
+
+
 /* style for the left and right button */
 .carousel__button{
     position: absolute;
@@ -330,158 +287,3 @@ body{
 }
 
 /* END OF STYLE FOR CAROUSEL */
-/* .carousel{
-    position: relative;
-    height: 70vh;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-}
-.carousel__track-container{
-    border: 1px solid black;
-    background-color: rgb(0, 12, 240);
-    max-height: 100%;
-    position: relative;
-}
-.carousel__track{
-    padding:0;
-    margin: 0;
-    height: 100%;
-}
-to make all of slides stay on each other
-.slide{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0; 
-}
-style to merge the text and immages together
-.carousel__item{
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-.slide_photo{
-   height: 100%;
-   background-color: rgb(89, 192, 240);
-}
-.slide_photo img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    color: rgb(236, 235, 235);
-   
-}
-.slide__text{
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    color: rgb(236, 235, 235);
-    background-color: rgb(89, 192, 240);
-    box-sizing: border-box;
-}
-.slide__text .text{
-    padding: 10%;
-    font-family: sans-serif;
-    line-height: 1.5em;
-    font-size: 1.3rem;
-    margin: 0;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: left;
-
-}
-.slide__text .text a{
-    text-decoration: none;
-    color: rgb(236, 235, 235);
-    border: 1px solid rgb(236, 235, 235);;
-    padding: 5px;
-    line-height: 1.5em;
-    transition: all 1s ease;
-}
-.slide__text .text a:hover{
-    background-color: rgb(236, 235, 235);
-    color: rgb(89, 192, 240);
-}
-@media screen and (min-width:767px){
-    .carousel__item{
-        grid-template-rows:1fr;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .carousel__nav{
-        grid-template-columns: repeat(7,1fr);
-    }
-}
-@media screen and (max-width:767px){
-    .carousel__nav{
-        grid-template-columns: 1fr 1fr;
-    }
-    .carousel__item{
-        grid-template-columns: 1fr;
-        grid-template-rows: 45% 55%;
-    }
-}
-@media screen and (max-width:479px){
-    .carousel__nav{
-        grid-template-columns: 1fr;
-    }
-}
-style for the left and right button
-.carousel__button{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgb(236, 235, 235);
-    border: 1px solid rgb(89, 192, 240);
-    padding: 10px;
-    color: rgb(89, 192, 240);
-    outline: none;
-    transition: all 0.5s ease;
-}
-.carousel__button:hover{
-    background-color: rgb(89, 192, 240);
-    border: 1px solid rgb(236, 235, 235);
-    color: rgb(236, 235, 235);
-}
-.carousel__button--right{
-    right: -60px;
-}
-.carousel__button--left{
-    left: -60px;
-}
-
-
-for the indication
-
-.carousel__nav{
-    display: grid;
-    max-height: 100%;
-    background-color: rgba(0, 0, 0, 0.568); 
-}
-.carousel__indicator{
-    border: 0px solid rgba(0, 0, 0, 0.568);
-    background-color: transparent;
-    color: rgb(236, 235, 235);
-    outline: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 10%;
-    align-items: center;
-}
-.current-slide{
-    background-color: black;
-}
-the hole
-.carousel__indicator .hole{
-    width: 15px;
-    height: 15px;
-    border:1.5px solid rgb(236, 235, 235);
-    border-radius: 50%;
-}
-.current-slide .hole{
-    background-color: rgb(89, 192, 240);
-    border-color:rgb(89, 192, 240);;
-} */

@@ -2,6 +2,7 @@ var button= document.querySelector(".toggle");
 var container= document.querySelector(".nav-container");
 var dropItems = document.querySelectorAll(".dropitems");
 var plus = document.querySelectorAll(".plus");
+// declaration of vatiable for the carousel
 
 
 button.addEventListener("click", function(){
@@ -18,4 +19,17 @@ function addClass(){
 		});
 	});
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 addClass();
