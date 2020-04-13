@@ -10,6 +10,7 @@ body{
     min-width: 260px;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 /* GRID LAYOUT OF THE BANNER */
 .banner{
