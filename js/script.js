@@ -1,5 +1,5 @@
 const button= document.querySelector(".toggle");
-const container= document.querySelector(".nav-container");
+const navContainer= document.querySelector(".nav-container");
 const dropItems = document.querySelectorAll(".dropitems");
 const plus = document.querySelectorAll(".plus");
 // declaration of vatiable for the carousel
@@ -14,37 +14,49 @@ let currentIndex = 0,
 
 // ------------------------------------------------------
 // set the width of the track to contain all slides
-track.style.width = `${slides.length *100}%`;
-
-//getting the width size of the slides(both image and text)
-const slideSize = slides[0].getBoundingClientRect().width;
-
-//arrange my slide side by side
-const positionSlide = (slide, index) =>{
-	slide.style.left = (slideSize * index) + "px";
+function setWidthOfSlide(array, track){
+	// set the width of the track to contain all slides
+	track.style.width = `${array.length *100}%`;	
 };
-slides.forEach(positionSlide);
+//get the width of the slides and arrange them width after width
+function getWidthOfSlidesAndArrangeThem(slides){
+	// get with of one slide
+	const slideSize = slides[0].getBoundingClientRect().width;
 
+	//arrange my slide side by side
+	slides.forEach(function (slide, index){
+		slide.style.left = (slideSize * index) + "px";
+	})
+}
+function runFunctions(){
+	
+	setWidthOfSlide(slides, track);
+
+	getWidthOfSlidesAndArrangeThem(slides);
+}
+
+runFunctions();
 // ------------------------------------------------------
 // event listeners
 
 // to the burger dropdown
 button.addEventListener("click", dropTheNavBar);
 
-// to the container and delegate to plus
-container.addEventListener("click", delegateToPlus);
+// to the NAV container and delegate to plus
+navContainer.addEventListener("click", delegateToPlus);
 
 //to the containers of the navigation buttons under the slide
 boxNav.addEventListener("click", checkTheClickedButton)
 
 // to the window when ever it loads
-window.onload = changeSlide;
+document.addEventListener("DOMContentLoaded", changeSlideAutomatically);
 
 // ------------------------------------------------------
 // functions
+// NAVBAR
 // drop the nav bar
 function dropTheNavBar(){
-    container.classList.toggle("new_nav-container");
+    navContainer.classList.toggle("new_nav-container");
     // toggle the burger
 	button.classList.toggle("toggled");
 }
@@ -60,7 +72,10 @@ function delegateToPlus(e){
 function dropTheItems(e){
 	e.target.parentNode.nextElementSibling.classList.toggle("second-order_dropdown");
 }
-// check the clicked btn
+// END OF FUNCTIONS FOR NAVBAR
+
+//CAROUSEL  
+// check the clicked carousel btn
 function checkTheClickedButton(e){
 	let targetedBox; 
 	// make sure the targeted box is the indicator btn
@@ -98,7 +113,7 @@ function moveToBox(currentBox, targetedBox){
 	targetedBox.classList.add("current-slide");
 }
 // automatically change slide with constant delay!
-function changeSlide(){
+function changeSlideAutomatically(){
 	const currentSlide = track.querySelector(".current-slide");
 	const currentBox = boxNav.querySelector(".current-slide");
 	const targetedBox = boxes[currentIndex];
@@ -113,8 +128,8 @@ function changeSlide(){
 		currentIndex = 0;
 	}
 
-	setTimeout(changeSlide, time)
+	setTimeout(changeSlideAutomatically, time)
 }
-
+// END OF FUNCTIONS FOR THE CAROUSEL
 
 

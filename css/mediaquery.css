@@ -169,9 +169,26 @@
         grid-template-columns: 1fr;
         grid-template-rows: 45% 55%;
     }
-    /* .slide__text .text{
-        font-size: 1em;
+    /* .carousel__nav{
+        max-height: 85vh;
     } */
+    .carousel__indicator{
+        padding: 5%;
+    }
+
+    /* for the introduction */
+    .main{
+        display: grid;
+        grid-template-columns:  1fr;
+        padding: 10px;
+        font-family: sans-serif ;
+    }
+    #featured-links{
+        width: 80%;
+    }
+    .featured-links_list-items{
+        font-size: 13px ;
+    }
 }
 @media screen and (max-width:479px){
     .row2-1{

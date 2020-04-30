@@ -4,7 +4,7 @@ body{
     background-color: darkgray;
 }
 .body-container{
-    background-color: red;
+    background-color: white;
     width: 90%;
     margin: 0 auto;
     min-width: 260px;
@@ -154,7 +154,6 @@ body{
 
 .carousel{
     position: relative;
-    /* height: 500px; */
     height: fit-content;
     width: 100%;
     margin: 0 auto;
@@ -224,6 +223,8 @@ body{
     padding: 5px;
     line-height: 1.5em;
     transition: all 1s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 .slide__text .text a:hover{
     background-color: rgb(236, 235, 235);
@@ -234,7 +235,6 @@ body{
 
 .carousel__nav{
     display: grid;
-    max-height: 85vh;
     background-color: rgb(61, 61, 61); 
 }
 .carousel__indicator{
@@ -244,7 +244,7 @@ body{
     outline: none;
     display: flex;
     justify-content: space-around;
-    padding: 5%;
+    padding: 10%;
     align-items: center;
 }
 .current-slide{
@@ -263,3 +263,96 @@ body{
 }
 
 /* END OF STYLE FOR CAROUSEL */
+
+/* For the main part  */
+/* the whole main section */
+.main{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto 340px;
+    padding: 10px;
+    font-family: sans-serif ;
+}
+/* for the introduction section */
+.introduction{
+    color:rgb(56, 55, 55);
+    line-height: 19px;
+}
+    /* welcome to futa */
+.welcome{
+    padding-bottom:10px;
+    
+}
+.welcome__heading{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+.welcome__body{
+    text-align: justify;
+    font-size: 15px;
+}
+
+.vision__heading{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+.vision__body{
+    text-align: justify;
+    font-size: 14px;
+}
+.mission{
+    padding-bottom:10px;
+}
+.mission__heading{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+.mission__body{
+    text-align: justify;
+    font-size: 14px;
+}
+.core-values{
+    font-size: 14px;
+}
+.core-values strong{
+    text-transform: uppercase;
+}
+
+/* for the featured links */
+#featured-links{
+    color:rgb(90, 69, 69);
+    line-height: 19px;
+    width: 100%;
+}
+#featured-links__heading{
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: light;
+}
+#featured-links__links{
+    padding:0;
+    height: 320px;
+    overflow-y: scroll;
+}
+.featured-links_list-items{
+    padding: 8px;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+}
+.featured-links_list-items a{
+    text-decoration: none;
+    color:rgb(35, 60, 129);
+    text-transform: capitalize;
+}
+
+.featured-links_list-items a:hover{
+    color:rgb(89, 192, 240);
+}
+/* End of style for the main */
+
