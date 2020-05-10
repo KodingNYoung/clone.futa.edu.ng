@@ -30,7 +30,7 @@ body{
     margin-top: 5px; 
     grid-column: 10/-1;
     text-align: right;
-    font-size: 12px;
+    font-size: 15px;
     color: rgb(129, 129, 129);
     display: grid;
     grid-template-rows: repeat(2,1fr);
@@ -42,7 +42,7 @@ body{
 .row2-1 .fab{
     margin: 4px;
     color: rgb(19, 19, 65);
-
+    
 }
 .row2-2 .fas{
     padding: 0 4px;
@@ -52,7 +52,7 @@ body{
     text-decoration: none;
     color: inherit;
     padding: 0 4px;
-
+    font-size: 14px;
 }
 /* END OF GRID LAYOUT FOR BANNER */
 
@@ -67,7 +67,7 @@ body{
     font-weight: bold;
 }
 .small-screen-container .toggle div{
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     width: 25px;
     height: 3px;
     background-color: rgb(236, 235, 235);
@@ -222,7 +222,7 @@ body{
     border: 1px solid rgb(236, 235, 235);;
     padding: 5px;
     line-height: 1.5em;
-    transition: all 1s ease;
+    transition: color 1s ease, background-color 1s ease;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -316,12 +316,17 @@ body{
     text-align: justify;
     font-size: 14px;
 }
-.core-values{
+.core-values__body{
     font-size: 14px;
+    text-align: justify;
 }
-.core-values strong{
+.core-values .core-values__heading{
     text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: -5px;
 }
+
 
 /* for the featured links */
 #featured-links{
@@ -355,4 +360,102 @@ body{
     color:rgb(89, 192, 240);
 }
 /* End of style for the main */
+
+/* style for the programmes and activities */
+#programmes{
+    width: 100%;
+    background-color: rgb(238, 237, 237);
+}
+.programmes__heading{
+    display: flex;
+    justify-content:space-between ;
+}
+.programmes__heading-text{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.programmes__heading-arrows{
+    display: flex;
+    align-self: center;
+    margin-right: 10px;
+}
+.arrow{
+    user-select: none;
+    cursor:pointer;
+    padding: 10px;
+    font-size: 20px;
+    color:rgb(89, 192, 240);
+    border: 1px solid rgb(89, 192, 240);
+    margin: 5px;
+    font-weight: bold;
+    transition: box-shadow .5s;
+}
+.arrow:hover{
+    box-shadow: 0px 0px 8px 0.5px rgb(89, 192, 240);
+}
+.programme_slideshow{
+    margin-bottom: 30px;
+    width: 100%;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden; 
+    /* border: 1px solid red; */
+}
+.slideshow__track{
+    position:relative;
+    /* border: 1px solid black; */
+    display: flex;
+    user-select: none;
+    transition: all 1s;
+    right: 0;
+}
+ .slideshow{
+    max-width: 250px;
+    height: 320px;
+    margin: 0 10px 0 20px;
+    transition: box-shadow 0.5s;
+}
+.slideshow:hover{
+    box-shadow: 2px 2px 15px 1px #333;
+}
+.slide-item{
+    width: 100%;
+    height:73%;
+    position: relative;
+}
+.slide-item img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-item__text{
+    position: absolute;
+    margin: 0;
+    font-size: 42px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+    top: 50%;
+    transform:translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+.slide__caption{
+    text-align: center;
+    font-size: 15px;
+    padding: 13%;
+    background-color: white;
+}
+.slide__caption a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+/* end of style for  */
+
 

@@ -202,7 +202,5 @@
         max-height:110vh ; 
         grid-template-rows: 1fr 3fr;
     }
-    /* .slide__text .text{
-        font-size: 1rem;
-    } */
+   
 }

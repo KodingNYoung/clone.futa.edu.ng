@@ -7,6 +7,11 @@ const track = document.querySelector(".carousel__track");
 const slides = Array.from(track.children);
 const boxNav = document.querySelector(".carousel__nav");
 const boxes = Array.from(boxNav.children);
+// variables for the program and activities
+const programTrack = document.querySelector(".slideshow__track");
+const slidesArray = Array.from(programTrack.children);
+let count = 0;
+let amountOfTranslateNum = 0;
 
 // for the automatic slide
 let currentIndex = 0,
@@ -28,11 +33,22 @@ function getWidthOfSlidesAndArrangeThem(slides){
 		slide.style.left = (slideSize * index) + "px";
 	})
 }
+// set width of the program track
+function setProgramTrack(array,track){
+	// get the width of the first slide
+	// const slideWidth = array[0].getBoundingClientRect().width;
+	// console.log(slideWidth)
+	//set the width of the track to the the array length * width of slide
+	track.style.width = `${array.length *280}px`;
+}
 function runFunctions(){
-	
+	//arrange the track
+	getWidthOfSlidesAndArrangeThem(slides);
+
+	// set width for carousel track
 	setWidthOfSlide(slides, track);
 
-	getWidthOfSlidesAndArrangeThem(slides);
+	setProgramTrack(slidesArray,programTrack)
 }
 
 runFunctions();
@@ -51,6 +67,8 @@ boxNav.addEventListener("click", checkTheClickedButton)
 // to the window when ever it loads
 document.addEventListener("DOMContentLoaded", changeSlideAutomatically);
 
+// to the arrow container
+document.querySelector('.programmes__heading-arrows').addEventListener('click', checkTheArrowClicked);
 // ------------------------------------------------------
 // functions
 // NAVBAR
@@ -94,7 +112,7 @@ function moveToTargetedSlide(targetedBox){
 	if (targetedBox.className === "carousel__indicator"){
 		const currentSlide = track.querySelector(".current-slide");
 		const currentBox = boxNav.querySelector(".current-slide");
-		const targetedIndex = boxes.findIndex(function(box){		//box => box === targetedBox);
+		const targetedIndex = boxes.findIndex(function(box){
 			return box === targetedBox}); 
 		const targetedSlide = slides[targetedIndex];
 		moveToSlide(track, currentSlide, targetedSlide);
@@ -132,4 +150,43 @@ function changeSlideAutomatically(){
 }
 // END OF FUNCTIONS FOR THE CAROUSEL
 
+// PROGRAMMES AND ACTIVITES
+function checkTheArrowClicked(e){
+	// get the width of display
+	let displayWidth = Number(document.querySelector(".programme_slideshow").getBoundingClientRect().width);
 
+	// get the width of track
+	const widthOfTrack = Number(document.querySelector(".slideshow__track").style.width.split("px")[0]);
+
+	if (e.target.className.includes("arrow-left") && (amountOfTranslateNum + displayWidth <= widthOfTrack) ){
+		// if the left arrow is clicked and the amount of translate + the width of container is not greater than the track width
+		amountOfTranslateNum += 280;
+	}else if (e.target.className.includes("arrow-right") && amountOfTranslateNum > 0){
+		// if its the right arrow and the count is less than zero
+		amountOfTranslateNum -= 280;
+		console.log(amountOfTranslateNum);
+	}
+
+	// translate the track
+	programTrack.style.transform = `translateX(-${amountOfTranslateNum}px)`;
+}
+
+
+function checkForSlide(){
+	// get the width of display
+	let displayWidth = Number(document.querySelector(".programme_slideshow").getBoundingClientRect().width);
+
+	// get the width of track
+	const widthOfTrack = Number(document.querySelector(".slideshow__track").style.width.split("px")[0]);
+	
+	if (amountOfTranslateNum + displayWidth > widthOfTrack) {
+		amountOfTranslateNum = widthOfTrack - displayWidth;
+	}else if(amountOfTranslateNum < 0){
+		amountOfTranslateNum = 0;
+	}
+	// translate the track
+	programTrack.style.transform = `translateX(-${amountOfTranslateNum}px)`;	
+
+	console.log(amountOfTranslateNum)
+}
+setInterval(checkForSlide, 10);
