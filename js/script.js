@@ -158,13 +158,13 @@ function checkTheArrowClicked(e){
 	// get the width of track
 	const widthOfTrack = Number(document.querySelector(".slideshow__track").style.width.split("px")[0]);
 
-	if (e.target.className.includes("arrow-left") && (amountOfTranslateNum + displayWidth <= widthOfTrack) ){
+	if (e.target.className.includes("arrow-right") && (amountOfTranslateNum + displayWidth <= widthOfTrack) ){
 		// if the left arrow is clicked and the amount of translate + the width of container is not greater than the track width
 		amountOfTranslateNum += 280;
-	}else if (e.target.className.includes("arrow-right") && amountOfTranslateNum > 0){
+	}else if (e.target.className.includes("arrow-left") && amountOfTranslateNum > 0){
 		// if its the right arrow and the count is less than zero
 		amountOfTranslateNum -= 280;
-		console.log(amountOfTranslateNum);
+		// console.log(amountOfTranslateNum);
 	}
 
 	// translate the track
@@ -187,6 +187,9 @@ function checkForSlide(){
 	// translate the track
 	programTrack.style.transform = `translateX(-${amountOfTranslateNum}px)`;	
 
-	console.log(amountOfTranslateNum)
+
+	// console.log(widthOfTrack);
+
+	// getWidthOfSlidesAndArrangeThem(slides);
 }
 setInterval(checkForSlide, 10);

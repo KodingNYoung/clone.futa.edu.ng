@@ -116,6 +116,15 @@
         background-color:rgb(39, 135, 180) ;
     }
 }
+@media screen and (max-width: 991px){
+    .videos-news__content{
+        /* display: flex;
+        flex-wrap: wrap; */
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+    }
+} 
 @media screen and (min-width:767px){
     .carousel__item{
         grid-template-rows:1fr;
@@ -188,6 +197,12 @@
     }
     .featured-links_list-items{
         font-size: 13px ;
+    }
+
+    .news__container{
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: 1fr;
     }
 }
 @media screen and (max-width:479px){
