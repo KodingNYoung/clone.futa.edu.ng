@@ -3,31 +3,24 @@
         width: 745px;
         box-sizing: border-box;
     }
-    /*.navbar{
-        font-family: sans-serif;
-    } */
     .navbar .small-screen-container{
         background-color: black;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         height: 100%;
-    }
-    .navbar .small-screen-container .menu{
         padding: 20px;
     }
     .navbar .nav-container{
-    
         margin-top: 0;
         background:rgb(71, 70, 70);
         position: relative;
         max-height: 0;
         overflow-y: hidden;
-        transition: all 0.5s ease-in;
+        transition: all 0.3s linear;
     }
-   .navbar .new_nav-container{
+   .navbar .full_nav-container{
         max-height: 220vh;
-        display: block;
-        position: relative;
     }
     .navbar .nav-container {
         display: block;
@@ -46,9 +39,6 @@
     .navbar .nav-container .no-line .link-container{
         border-bottom:0px;
     }
-   /* .navbar .nav-container .nav-items .link-container:hover{
-        background-color:rgb(71, 70, 70) ;     
-    } */
     .navbar .nav-container .nav-items .link-container .nav-links:hover{
         color: rgb(89, 192, 240);
     }
@@ -57,13 +47,13 @@
     }
 
    .toggled .line1{
-        transform: rotate(-60deg) translate(-6px,6px);
+        transform: rotate(-45deg) translate(-5px,6px);
     }   
     .toggled .line2{
         opacity: 0;
     }
     .toggled .line3{        
-        transform: rotate(60deg) translate(-5px,-6px);
+        transform: rotate(45deg) translate(-5px,-6px);
     }
 
     /* the inner dropdowns */
@@ -92,7 +82,10 @@
     }
     .nav-container .nav-items .second-order_dropdown{
         max-height: 0;
-    } 
+    }
+    .minus .vertical{
+        opacity: 0;
+    }
     
 }
 
@@ -178,13 +171,15 @@
         grid-template-columns: 1fr;
         grid-template-rows: 45% 55%;
     }
-    /* .carousel__nav{
-        max-height: 85vh;
-    } */
     .carousel__indicator{
-        padding: 5%;
+        padding: 5px;
     }
-
+    .text .slide-text_header{
+        font-size: 1.1em;
+    }
+    .text .slide-text_body{
+        font-size: 0.9em;
+    }
     /* for the introduction */
     .main{
         display: grid;
@@ -214,7 +209,7 @@
         grid-template-columns: 1fr;
     }
     .carousel__item{
-        max-height:110vh ; 
+        /* max-height:110vh ;  */
         grid-template-rows: 1fr 3fr;
     }
    
