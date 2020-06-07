@@ -815,6 +815,7 @@ footer{
 }
 .copyright-text a{
     text-decoration: none;
+    color: rgb(89, 192, 240);
 }
 .copyright-text a:hover{
     color: rgb(197, 182, 182);
